@@ -5,6 +5,10 @@
 #ifndef CON64_PLAYER_H
 #define CON64_PLAYER_H
 
+#include "Board.h"
+
+class Board;
+
 class Player {
 
 private:
@@ -16,11 +20,14 @@ public:
 
     void updatePBoard(int x, int y, int z);
 
+    virtual void play(Board &board, int x, int y); //TODO: virtual?
+
     int mark;
 
     void print();
 
     bool checkWin();
+
 };
 
 

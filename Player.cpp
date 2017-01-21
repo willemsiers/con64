@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "Board.h"
+#include "Player.h"
 
 void Player::updatePBoard(int x, int y, int z) {
     board_p[x][y][z] = mark;
@@ -24,6 +24,8 @@ void Player::print() {
 Player::Player(int m) {
     mark = m;
 }
+
+
 
 bool Player::checkWin() {
     bool result = false;
@@ -156,4 +158,9 @@ bool Player::checkWin() {
     std::cout << "f2b="<<f2b<<" l2r="<<l2r<<" vert="<<vert<<" l2rd="<<l2rd<<" r2ld="<<r2ld<<" f2bd="<<f2bd<<" b2fd="<<b2fd<<" l2rt="<<l2rt<<" r2lt="<<r2lt<<" dd1="<<dd1<<" dd2="<<dd2<<" dd3="<<dd3<<" dd4="<<dd4<<std::endl;
 
     return result;
+}
+
+void Player::play(Board &board, int x, int y) {
+    int z = board.put(x, y, this->mark);
+    updatePBoard(x, y, z);
 }

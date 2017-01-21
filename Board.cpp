@@ -5,10 +5,7 @@
 #include <iostream>
 #include "Board.h"
 
-Board::Board() {
-}
-
-void Board::put(int x, int y, Player &p) {
+int Board::put(int x, int y, int mark) {
     int z = 0;
 
     while (z < 4) {
@@ -22,9 +19,9 @@ void Board::put(int x, int y, Player &p) {
         std::cout << "invalid mark or move";
         invalid = true;
     } else {
-        p.updatePBoard(x, y, z);
-        updateFullBoard(p.mark, x, y, z);
+        updateFullBoard(mark, x, y, z);
     }
+    return z;
 }
 
 void Board::updateFullBoard(int mark, int x, int y, int z) {
@@ -41,11 +38,4 @@ void Board::print() {
         }
         std::cout << (invalid ? "INVALID" : "====") << std::endl;
     }
-}
-
-bool Board::checkWin() {
-    bool result = false;
-    result = result || players[0].checkWin();
-    result = result || players[1].checkWin();
-    return result;
 }
