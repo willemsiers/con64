@@ -8,6 +8,7 @@
 #define NUM_PLAYERS 2
 #define RED 7
 #define BLUE 4
+#include <vector>
 
 class Board {
 
@@ -21,6 +22,8 @@ public:
     void print();
 
     void updateFullBoard(int x, int y, int z, int mark);
+
+    int getNonFullPositions(std::vector<std::pair<int, int>>& buffer);
 
     /** Returns z **/
     int put(int x, int y, int mark);

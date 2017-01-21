@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include "HumanPlayer.h"
-#include "Board.h"
 
 HumanPlayer::HumanPlayer(int mark) : Player(mark) {
 

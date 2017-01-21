@@ -1,9 +1,9 @@
 #include <iostream>
 #include "Board.h"
 #include "Player.h"
-#include "HumanPlayer.h"
+#include "NaivePlayer.h"
 
-HumanPlayer players[2] = {HumanPlayer(RED), HumanPlayer(BLUE)};
+NaivePlayer players[2] = {NaivePlayer(RED), NaivePlayer(BLUE)};
 
 int main() {
 

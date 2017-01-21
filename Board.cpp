@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "Board.h"
 
 int Board::put(int x, int y, int mark) {
@@ -37,5 +38,19 @@ void Board::print() {
             std::cout << std::endl;
         }
         std::cout << (invalid ? "INVALID" : "====") << std::endl;
+    }
+}
+
+int Board::getNonFullPositions(std::vector<std::pair<int, int>>& buffer){
+    int count = 0;
+
+    buffer.clear();
+    for (int x = 0; x < 4; ++x) {
+        for (int y = 0; y < 4; ++y) {
+            if(fullBoard[x][y][3] == 0){
+                buffer.push_back(std::make_pair(x,y));
+                count++;
+            }
+        }
     }
 }
