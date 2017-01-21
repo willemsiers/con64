@@ -32,9 +32,9 @@ void Board::updateFullBoard(int mark, int x, int y, int z) {
 }
 
 void Board::print() {
-    for (int x = 0; x < 4; ++x) {
+    for (int y = 3; y >= 0; --y) {
         for (int z = 3; z >= 0; --z) {
-            for (int y = 0; y < 4; ++y) {
+                for (int x = 0; x < 4; ++x) {
                 std::cout << fullBoard[x][y][z];
             }
             std::cout << std::endl;
